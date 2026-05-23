@@ -1,0 +1,58 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage/
+dist/
+build/
+.venv/
+venv/
+*.sqlite3
+generated/*
+!generated/pdfs/
+generated/pdfs/*
+!generated/pdfs/demo-contract-pad-risk.pdf
+!generated/pdfs/demo-contract-pad-property.pdf
+!generated/pdfs/demo-contract-pad-maria.pdf
+!generated/pdfs/demo-contract-pad-andrei.pdf
+!generated/pdfs/demo-contract-pad-ioana.pdf
+!generated/pdfs/demo-contract-pad-carpatica.pdf
+!generated/pdfs/demo-contract-pad-elena.pdf
+!generated/pdfs/demo-contract-pad-george.pdf
+!generated/pdfs/demo-contract-pad-vlad.pdf
+!generated/pdfs/demo-contract-pad-simona.pdf
+!generated/pdfs/demo-contract-pad-radu.pdf
+!generated/pdfs/demo-contract-pad-alex.pdf
+.env
+.env.*
+!.env.example
+.codex
+jira/
+uv.lock
+node_modules/
+.bin/
+*.tsbuildinfo
+
+# Frontend
+frontend/dist/
+frontend/node_modules/
+frontend/.vite/
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Package builds
+*.egg-info/
+*.dist-info/
+
+# OS
+.DS_Store
+
+# Logs
+*.log

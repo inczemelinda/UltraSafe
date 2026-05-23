@@ -1,0 +1,8 @@
+**
+# ignores everything but these below
+!sql/
+!sql/*.sql
+!scripts/
+!scripts/db_migrate.sh
+!scripts/db_seed_demo.sh
+!Dockerfile

@@ -1,0 +1,381 @@
+{
+  "case_metadata": {
+    "case_id": "00000000-0000-0000-0000-000000000001",
+    "domain": "contracts",
+    "workflow_name": "contract_drafting",
+    "workflow_version": "mvp",
+    "status": "success",
+    "created_at": "2026-04-20T08:00:00Z",
+    "updated_at": "2026-04-20T08:01:30Z",
+    "created_by": "underwright-cli",
+    "correlation_id": "demo-contract-001"
+  },
+  "source_inputs": {
+    "contract_id": "10000000-0000-0000-0000-000000000001",
+    "client_id": 1,
+    "insured_asset_id": 1,
+    "template_id": 22,
+    "language": "ro-RO",
+    "generation_mode": "hybrid_template_plus_llm",
+    "effective_date": "2026-05-01",
+    "user_entered_overrides": {}
+  },
+  "reference_data": {
+    "contract_source": {
+      "summary": "Normalized DB-backed contract source model loaded by ContractDataService."
+    },
+    "client_profile": {
+      "full_name": "Ion Popescu",
+      "type": "individual",
+      "email": "ion.popescu@example.test"
+    },
+    "property_profile": {
+      "asset_type": "apartment",
+      "usage_type": "residential",
+      "city": "Bucuresti"
+    },
+    "contract_template": {
+      "template_id": 22,
+      "template_code": "PAD_STANDARD_RO",
+      "template_name": "PAD Standard RO",
+      "template_version": "1.0"
+    },
+    "policy_rules": {},
+    "external_reference_data": {}
+  },
+  "domain_payload": {
+    "contract_generation_payload": {
+      "document_type": "insurance_contract",
+      "document_version": "1.0",
+      "language": "ro-RO",
+      "generation_mode": "hybrid_template_plus_llm",
+      "contract_meta": {
+        "contract_id": "PAD-RISK-2026-000145",
+        "issue_date": "2026-04-20",
+        "effective_date": "2026-05-01",
+        "expiration_date": "2027-04-30",
+        "jurisdiction": "Romania",
+        "governing_law": "Legea 260/2008",
+        "currency": "RON"
+      },
+      "parties": {
+        "insurer": {
+          "name": "Asigurator Demo SA",
+          "company_id": "RO12345678",
+          "address": "Bd. Exemplu 100, Bucuresti",
+          "representative": {
+            "name": "Maria Ionescu",
+            "role": "Director General"
+          }
+        },
+        "insured": {
+          "type": "individual",
+          "full_name": "Ion Popescu",
+          "national_id": "1800101223344",
+          "company_id": null,
+          "email": "ion.popescu@example.test",
+          "phone": "+40712345678",
+          "address": "Str. Lalelelor 12, Sector 3, Bucuresti"
+        }
+      },
+      "insured_asset": {
+        "asset_type": "apartment",
+        "usage_type": "residential",
+        "construction_type": "concrete",
+        "year_built": 1986,
+        "floor": 4,
+        "area_sqm": 68.0,
+        "declared_value": 350000.0,
+        "occupancy": "owner_occupied",
+        "previous_claims_count": 2,
+        "address": {
+          "country": "Romania",
+          "county": "Bucuresti",
+          "city": "Bucuresti",
+          "street": "Str. Lalelelor",
+          "number": "12",
+          "postal_code": "031234"
+        }
+      },
+      "coverage": {
+        "building_sum_insured": 350000.0,
+        "contents_sum_insured": 350000.0,
+        "total_sum_insured": 350000.0
+      },
+      "risk_profile": {
+        "overall_risk_level": "medium_high",
+        "risk_score": 72,
+        "factors": [
+          {
+            "code": "FLOOD_EXPOSURE",
+            "label": "Expunere la inundatii",
+            "level": "high",
+            "score": 85,
+            "evidence": [
+              "zona cu istoric de inundatii"
+            ],
+            "contract_impact": {
+              "clause_tags": [
+                "flood_specific"
+              ],
+              "premium_adjustment_percent": 12.0,
+              "deductible_adjustment_ron": 500.0
+            }
+          }
+        ]
+      },
+      "pricing": {
+        "base_premium_ron": 1200.0,
+        "adjustments": [
+          {
+            "source": "FLOOD_EXPOSURE",
+            "type": "percentage",
+            "value": 12.0
+          }
+        ],
+        "final_premium_ron": 1490.0,
+        "payment_plan": {
+          "type": "annual",
+          "installments": 1
+        }
+      }
+    }
+  },
+  "generated_outputs": {
+    "contract_draft": {
+      "draft_contract": "Rendered PAD contract text...",
+      "rendered_template_text": "Template rendered before supplementary drafting text...",
+      "final_document_text": "Final rendered PAD contract text...",
+      "template_used": {
+        "template_id": 22,
+        "template_code": "PAD_STANDARD_RO",
+        "template_name": "PAD Standard RO",
+        "template_version": "1.0"
+      },
+      "template_version": "1.0",
+      "mapped_input_fields": {
+        "payload_path": "contract_case_context.domain_payload.contract_generation_payload",
+        "top_level_sections": [
+          "document_type",
+          "document_version",
+          "language",
+          "generation_mode",
+          "contract_meta",
+          "parties",
+          "insured_asset",
+          "coverage",
+          "risk_profile",
+          "pricing"
+        ],
+        "contract_id": "PAD-RISK-2026-000145",
+        "document_type": "insurance_contract"
+      },
+      "unmapped_or_missing_fields": [],
+      "generation_rationale": "Rendered the canonical Underwright contract generation payload through the active contract template.",
+      "llm_drafting_summary": "Template PAD_STANDARD_RO v1.0 was applied. Inserted insured party Ion Popescu and apartment details. Applied 1 risk factor, 1 clause tag, and 1 pricing adjustment. Human review should confirm risk clauses and premium adjustments.",
+      "generation_metadata": {
+        "generation_mode": "hybrid_template_plus_llm",
+        "rendered_template_provided_to_generator": true,
+        "supplementary_text_generator_present": true,
+        "supplementary_text_generated": true,
+        "supplementary_text_placeholder_present": true
+      },
+      "generated_document_reference": {
+        "id": 123,
+        "contract_id": "10000000-0000-0000-0000-000000000001",
+        "template_id": 22,
+        "file_url": null
+      }
+    }
+  },
+  "checks_and_warnings": {
+    "contract_warnings": [],
+    "missing_template_fields": [],
+    "unmapped_payload_fields": [],
+    "inconsistent_input_values": [],
+    "generation_warnings": []
+  },
+  "guidance": {
+    "contract_guidance": {}
+  },
+  "external_signals": {
+    "location_signals": {},
+    "property_signals": {},
+    "regulatory_signals": {}
+  },
+  "review_state": {
+    "contract_review_view": {
+      "header": {
+        "case_id": "00000000-0000-0000-0000-000000000001",
+        "contract_id": "10000000-0000-0000-0000-000000000001",
+        "domain": "contracts",
+        "workflow_status": "success"
+      },
+      "source_input_panel": {
+        "contract_id": "10000000-0000-0000-0000-000000000001",
+        "customer_summary": {
+          "full_name": "Ion Popescu",
+          "email": "ion.popescu@example.test"
+        },
+        "insured_asset_summary": {
+          "asset_type": "apartment",
+          "usage_type": "residential",
+          "area_sqm": 68.0
+        }
+      },
+      "generated_output_panel": {
+        "draft_contract_text": "Final rendered PAD contract text...",
+        "generated_document_reference": {
+          "id": 123,
+          "contract_id": "10000000-0000-0000-0000-000000000001",
+          "template_id": 22,
+          "file_url": null
+        },
+        "status": "success"
+      },
+      "template_panel": {
+        "template_id": 22,
+        "template_code": "PAD_STANDARD_RO",
+        "template_name": "PAD Standard RO",
+        "template_version": "1.0"
+      },
+      "warnings_panel": {
+        "missing_fields": [],
+        "unmapped_fields": []
+      },
+      "rationale_panel": {
+        "payload_sections_used": [
+          "document_type",
+          "document_version",
+          "language",
+          "generation_mode",
+          "contract_meta",
+          "parties",
+          "insured_asset",
+          "coverage",
+          "risk_profile",
+          "pricing"
+        ],
+        "generation_metadata": {
+          "generation_mode": "hybrid_template_plus_llm"
+        }
+      },
+      "audit_summary": [
+        {
+          "timestamp": "2026-04-20T08:00:00Z",
+          "event_type": "case_context_created",
+          "module_or_service": "CaseContextService",
+          "summary": "Contract case context created."
+        },
+        {
+          "timestamp": "2026-04-20T08:01:30Z",
+          "event_type": "generated_document_saved",
+          "module_or_service": "GeneratedDocumentRepository",
+          "summary": "Generated document saved."
+        }
+      ]
+    },
+    "available_actions": [
+      "review",
+      "approve",
+      "regenerate"
+    ]
+  },
+  "audit_trail": [
+    {
+      "timestamp": "2026-04-20T08:00:00Z",
+      "event_type": "case_context_created",
+      "module_or_service": "CaseContextService",
+      "summary": "Contract case context created.",
+      "metadata": {
+        "contract_id": "10000000-0000-0000-0000-000000000001"
+      }
+    },
+    {
+      "timestamp": "2026-04-20T08:00:05Z",
+      "event_type": "workflow_started",
+      "module_or_service": "ContractWorkflow",
+      "summary": "Contract drafting workflow started.",
+      "metadata": {
+        "contract_id": "10000000-0000-0000-0000-000000000001",
+        "template_code": "PAD_STANDARD_RO"
+      }
+    },
+    {
+      "timestamp": "2026-04-20T08:00:20Z",
+      "event_type": "source_data_loaded",
+      "module_or_service": "ContractDataService",
+      "summary": "Normalized contract source data loaded.",
+      "metadata": {
+        "contract_id": "10000000-0000-0000-0000-000000000001"
+      }
+    },
+    {
+      "timestamp": "2026-04-20T08:00:30Z",
+      "event_type": "contract_payload_attached",
+      "module_or_service": "CaseContextService",
+      "summary": "Canonical contract generation payload attached.",
+      "metadata": {
+        "payload_path": "contract_case_context.domain_payload.contract_generation_payload"
+      }
+    },
+    {
+      "timestamp": "2026-04-20T08:00:35Z",
+      "event_type": "payload_built",
+      "module_or_service": "ContractPayloadBuilder",
+      "summary": "Canonical contract generation payload built.",
+      "metadata": {
+        "top_level_sections": [
+          "document_type",
+          "document_version",
+          "language",
+          "generation_mode",
+          "contract_meta",
+          "parties",
+          "insured_asset",
+          "coverage",
+          "risk_profile",
+          "pricing"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-04-20T08:00:45Z",
+      "event_type": "template_loaded",
+      "module_or_service": "TemplateService",
+      "summary": "Contract template loaded.",
+      "metadata": {
+        "template_code": "PAD_STANDARD_RO",
+        "template_version": "1.0"
+      }
+    },
+    {
+      "timestamp": "2026-04-20T08:01:00Z",
+      "event_type": "template_rendered",
+      "module_or_service": "TemplateService",
+      "summary": "Contract template rendered with canonical payload.",
+      "metadata": {
+        "template_code": "PAD_STANDARD_RO",
+        "template_version": "1.0"
+      }
+    },
+    {
+      "timestamp": "2026-04-20T08:01:20Z",
+      "event_type": "draft_generated",
+      "module_or_service": "ContractDraftingModule",
+      "summary": "Contract draft generated.",
+      "metadata": {
+        "generation_mode": "hybrid_template_plus_llm"
+      }
+    },
+    {
+      "timestamp": "2026-04-20T08:01:30Z",
+      "event_type": "generated_document_saved",
+      "module_or_service": "GeneratedDocumentRepository",
+      "summary": "Generated document saved.",
+      "metadata": {
+        "generated_document_id": 123
+      }
+    }
+  ]
+}

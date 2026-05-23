@@ -1,0 +1,75 @@
+{{parties.insurer.name}}
+
+Sediul social: {{parties.insurer.address}} | CUI: {{parties.insurer.company_id}} | Reprezentant: {{parties.insurer.representative.name}} | Funcția: {{parties.insurer.representative.role}}
+
+CONTRACT DE ASIGURARE A LOCUINȚEI 
+
+Seria și numărul poliței: {{contract_meta.contract_id}}
+
+Încheiat astăzi, la data de {{contract_meta.issue_date}}, între societatea de asigurare {{parties.insurer.name}}, în calitate de Asigurător, reprezentată prin {{parties.insurer.representative.name}}, având funcția de {{parties.insurer.representative.role}}, și {{parties.insured.full_name}}, identificat cu CNP {{parties.insured.national_id}}, având adresa de domiciliu în {{parties.insured.address}}, adresa de e-mail {{parties.insured.email}} și numărul de telefon {{parties.insured.phone}}, în calitate de Asigurat/Contractant, s-a convenit încheierea prezentului contract de asigurare, în următoarele condiții:
+
+Art. 1 - Obiectul contractului 
+
+1.1. Obiectul prezentului contract îl constituie asigurarea obligatorie a locuinței de tip {{insured_asset.asset_type}}, destinată utilizării {{insured_asset.usage_type}}, situată în {{insured_asset.address.city}}, {{insured_asset.address.street}} nr. {{insured_asset.address.number}}, județ/sector {{insured_asset.address.county}}, {{insured_asset.address.country}}, având suprafața utilă de {{insured_asset.area_sqm}} mp, edificată în anul {{insured_asset.year_built}}, realizată din {{insured_asset.construction_type}}.
+
+1.2. Suma asigurată aferentă prezentei polițe este de {{coverage.total_sum_insured}} RON, în conformitate cu documentul de tip {{document_type}} și versiunea {{document_version}}.
+
+Art. 2 - Durata asigurării 
+
+2.1. Contractul de asigurare intră în vigoare la data de {{contract_meta.effective_date}} și încetează la data de {{contract_meta.expiration_date}}, cu condiția achitării primei de asigurare conform prevederilor prezentului contract.
+
+2.2. Data emiterii poliței este {{contract_meta.issue_date}}, iar contractul este guvernat de {{contract_meta.governing_law}} în jurisdicția {{contract_meta.jurisdiction}}.
+
+Art. 3 - Prima de asigurare 
+
+3.1. Prima de bază aferentă prezentei asigurări este de {{pricing.base_premium_ron}}. În urma evaluării profilului de risc și a ajustărilor aplicabile, rezultă o primă finală de {{pricing.final_premium_ron}}, exprimată în moneda {{contract_meta.currency}}.
+
+3.2. Prima se achită conform planului de plată {{pricing.payment_plan.type}}, în {{pricing.payment_plan.installments}} tranșă/tranșe, potrivit condițiilor comunicate de Asigurător și prevăzute în documentele contractuale anexate prezentei polițe.
+
+Art. 4 - Riscuri acoperite 
+
+4.1. Asigurarea acoperă riscurile prevăzute de legislația aplicabilă asigurării obligatorii a locuințelor, inclusiv cutremur, alunecări de teren și inundații, în limitele și condițiile stabilite prin lege și prin clauzele aplicabile documentului de tip {{document_type}}.
+
+Art. 5 - Profilul de risc 
+
+5.1. În baza informațiilor consolidate la momentul subscrierii, nivelul de risc asociat bunului asigurat este evaluat ca fiind {{risk_profile.overall_risk_level}}.
+
+5.2. Rezumatul evaluării de risc indică un scor total de {{risk_profile.risk_score}} pentru bunul asigurat, calculat pe baza factorilor de risc disponibili în profilul de risc.
+
+5.3. Datele utilizate în evaluarea prezentului contract includ istoricul de daune al bunului asigurat, cu {{insured_asset.previous_claims_count}} daună/daune anterioare declarate.
+
+Art. 6 - Declarațiile asiguratului 
+
+6.1. Asiguratul declară că toate informațiile furnizate în vederea încheierii prezentului contract, inclusiv cele referitoare la identitatea sa, la caracteristicile imobilului și la utilizarea acestuia, sunt complete, reale și conforme cu situația de fapt de la data semnării. 
+
+6.2. Orice declarație inexactă sau omisiune relevantă poate atrage aplicarea măsurilor prevăzute de lege și de condițiile contractuale incidente. 
+
+Art. 7 - Obligațiile părților 
+
+7.1. Asigurătorul se obligă să acorde despăgubiri în condițiile și limitele prevăzute de lege și de prezentul contract, pentru evenimentele asigurate produse în perioada de valabilitate a poliței. 
+
+7.2. Asiguratul se obligă să achite prima de asigurare la termen, să păstreze și să utilizeze locuința în condiții normale și să notifice Asigurătorul, fără întârziere, despre producerea oricărui eveniment asigurat sau a oricărei modificări relevante privind bunul asigurat. 
+
+Art. 8 - Excluderi și limitări 
+
+8.1. Nu fac obiectul despăgubirii situațiile excluse prin lege, precum și daunele produse cu intenție, ca urmare a unor declarații false, a unor împrejurări care nu intră în sfera riscurilor acoperite sau în alte cazuri prevăzute expres de condițiile aplicabile produsului de asigurare. 
+
+Art. 9 - Dispoziții finale 
+
+9.1. Prezentul contract se completează cu prevederile legale în vigoare și cu clauzele standard aplicabile asigurării obligatorii a locuințelor, care fac parte integrantă din prezenta poliță. 
+
+9.2. Documentul a fost generat în versiunea {{document_version}} la data de {{contract_meta.issue_date}}, iar conținutul final al poliței reprezintă forma contractuală emisă pe baza datelor validate la momentul generării.
+
+Încheiat în două exemplare originale, câte unul pentru fiecare parte. 
+
+ASIGURĂTOR,                    ASIGURAT, 
+
+{{parties.insurer.name}}         {{parties.insured.full_name}}
+
+Prin: {{parties.insurer.representative.name}}
+
+Funcția: {{parties.insurer.representative.role}}
+
+Semnătură: ____________________         Semnătură: ____________________ 
+
+Ștampilă: _____________________ 

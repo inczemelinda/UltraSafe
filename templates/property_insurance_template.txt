@@ -1,0 +1,177 @@
+POLIȚĂ DE ASIGURARE A LOCUINȚEI ȘI BUNURILOR
+
+LOCUINȚĂ ȘI BUNURI
+
+Număr poliță: {{contract_meta.contract_id}}
+Data emiterii: {{contract_meta.issue_date}}
+
+Între:
+
+1. ASIGURĂTORUL
+
+Societatea de Asigurare {{parties.insurer.name}}, cu sediul în {{parties.insurer.address}}, înregistrată la {{parties.insurer.company_id}}, denumită în continuare „Asigurător”.
+
+și
+
+2. ASIGURATUL
+
+Nume și prenume: {{parties.insured.full_name}}
+Telefon:{{parties.insured.phone}}
+Email:{{parties.insured.email}}
+
+denumit în continuare „Asigurat”.
+
+
+CAPITOLUL I – OBIECTUL ASIGURĂRII
+
+Art. 1
+
+Prin prezenta poliță, Asigurătorul se obligă să despăgubească Asiguratul pentru daunele produse bunurilor asigurate, ca urmare a producerii riscurilor acoperite prevăzute în contract.
+
+Art. 2 – Bunuri asigurate
+
+Sunt asigurate următoarele:
+
+A. Clădire / Locuință
+
+• tip imobil: {{insured_asset.asset_type}}
+• adresă: {{insured_asset.address.street}} {{insured_asset.address.number}}, {{insured_asset.address.city}}, {{insured_asset.address.county}}, {{insured_asset.address.country}}, {{insured_asset.address.postal_code}}
+• suprafață: {{insured_asset.area_sqm}} mp
+• an construcție: {{insured_asset.year_built}}
+
+B. Bunuri mobile
+
+• mobilier
+• electrocasnice
+• echipamente electronice
+• obiecte personale
+• alte bunuri declarate
+
+
+ CAPITOLUL II – RISCURI ACOPERITE
+
+Art. 3
+
+Asigurătorul acordă despăgubiri pentru daune produse direct de:
+
+• incendiu
+• explozie
+• trăsnet
+• furtună
+• grindină
+• inundație
+• avarii accidentale la instalații
+• cutremur (dacă este inclus suplimentar)
+• furt prin efracție
+• vandalism
+
+
+CAPITOLUL III – EXCLUDERI
+
+Art. 4
+
+Nu sunt acoperite:
+
+• daune provocate intenționat de Asigurat;
+• uzura normală;
+• defecte de construcție;
+• război, revoltă sau acte teroriste;
+• confiscări dispuse de autorități;
+• deteriorări produse prin neîntreținerea imobilului.
+
+
+CAPITOLUL IV – SUMA ASIGURATĂ
+
+Art. 5
+
+Suma asigurată totală este de {{coverage.total_sum_insured}} RON.
+
+Aceasta este compusă din:
+• suma asigurată pentru locuință: {{coverage.building_sum_insured}} RON;
+• suma asigurată pentru bunuri mobile: {{coverage.contents_sum_insured}} RON.
+
+
+CAPITOLUL V – PRIMA DE ASIGURARE
+
+Art. 6
+
+Prima totală de asigurare este de: {{pricing.final_premium_ron}} RON.
+
+Plata se poate efectua:
+
+integral;
+în rate trimestriale/semestriale.
+
+Neplata primei poate conduce la suspendarea sau încetarea poliței.
+
+CAPITOLUL VI – PERIOADA DE ASIGURARE
+
+Art. 7
+
+Asigurarea este valabilă în perioada:
+
+de la {{contract_meta.effective_date}}
+până la {{contract_meta.expiration_date}}
+
+ora 00:00 – ora 24:00.
+
+CAPITOLUL VII – OBLIGAȚIILE ASIGURATULUI
+
+Art. 8
+
+Asiguratul are obligația:
+
+• să întrețină bunurile în stare bună;
+• să ia măsuri pentru limitarea pagubelor;
+• să anunțe producerea evenimentului în maximum 48 ore;
+• să permită constatarea daunelor.
+
+CAPITOLUL VIII – CONSTATAREA ȘI DESPĂGUBIREA
+
+Art. 9
+
+În caz de daună, Asiguratul va transmite:
+
+• notificarea evenimentului;
+• fotografii;
+• documente justificative;
+• acte de proprietate;
+• proces verbal de la Poliție (în caz de furt).
+
+Art. 10
+
+Despăgubirea se acordă în limita sumei asigurate și după evaluarea efectuată de Asigurător.
+
+Termenul de plată al despăgubirii este de maximum {{pricing.payment_plan.installments}} zile de la aprobarea dosarului de daună.
+
+CAPITOLUL IX – ÎNCETAREA CONTRACTULUI
+
+Art. 11
+
+Contractul încetează:
+
+• la expirarea perioadei asigurate;
+• prin reziliere;
+• prin neplata primei;
+• prin distrugerea totală a bunului asigurat.
+
+Art. 12
+
+Prezentul contract este guvernat de legislația română în vigoare, inclusiv, dar fără a se limita la:
+
+• Codul Civil al României;
+• Legea nr. 237/2015 privind autorizarea și supravegherea activității de asigurare și reasigurare;
+• Legea nr. 132/2017 privind asigurarea obligatorie de răspundere civilă auto, în măsura aplicabilității;
+• Normele emise de Autoritatea de Supraveghere Financiară (ASF);
+• Legea nr. 260/2008 privind asigurarea obligatorie a locuințelor împotriva cutremurelor, alunecărilor de teren și inundațiilor;
+• Regulamentul (UE) 2016/679 privind protecția datelor cu caracter personal (GDPR).
+
+Orice litigiu decurgând din interpretarea sau executarea prezentului contract va fi soluționat pe cale amiabilă, iar în cazul în care acest lucru nu este posibil, competența revine instanțelor judecătorești din România.
+
+
+SEMNĂTURI
+
+ASIGURĂTOR                                                                      ASIGURAT
+
+Nume reprezentant: {{parties.insurer.representative.name}}                              Nume: {{parties.insured.full_name}}
+Semnătură: {{parties.insurer.representative.name}}                                      Semnătură: {{parties.insured.full_name}}

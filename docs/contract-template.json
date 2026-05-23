@@ -1,0 +1,217 @@
+{
+  "document_type": "insurance_contract",
+  "document_version": "1.0",
+  "language": "ro-RO",
+  "generation_mode": "hybrid_template_plus_llm",
+  "contract_meta": {
+    "contract_id": "PAD-RISK-2026-000145",
+    "issue_date": "2026-04-20",
+    "effective_date": "2026-05-01",
+    "expiration_date": "2027-04-30",
+    "jurisdiction": "Romania",
+    "governing_law": "Legea 260/2008",
+    "currency": "RON"
+  },
+  "parties": {
+    "insurer": {
+      "name": "Asigurator Demo SA",
+      "company_id": "RO12345678",
+      "address": "Bd. Exemplu 100, Bucuresti",
+      "representative": {
+        "name": "Maria Ionescu",
+        "role": "Director General"
+      }
+    },
+    "insured": {
+      "type": "individual",
+      "full_name": "Ion Popescu",
+      "national_id": "1800101223344",
+      "address": "Str. Lalelelor 12, Sector 3, Bucuresti",
+      "email": "ion.popescu@example.test",
+      "phone": "+40712345678"
+    }
+  },
+  "insured_asset": {
+    "asset_type": "apartment",
+    "usage_type": "residential",
+    "construction_type": "concrete",
+    "year_built": 1986,
+    "floor": 4,
+    "area_sqm": 68,
+    "address": {
+      "country": "Romania",
+      "county": "Bucuresti",
+      "city": "Bucuresti",
+      "street": "Str. Lalelelor",
+      "number": "12",
+      "postal_code": "031234"
+    },
+    "declared_value": 350000,
+    "occupancy": "owner_occupied",
+    "previous_claims_count": 2
+  },
+  "coverage": {
+    "building_sum_insured": 350000,
+    "contents_sum_insured": 350000,
+    "total_sum_insured": 350000
+  },
+  "risk_profile": {
+    "overall_risk_level": "medium_high",
+    "risk_score": 72,
+    "factors": [
+      {
+        "code": "FLOOD_EXPOSURE",
+        "label": "Expunere la inundatii",
+        "level": "high",
+        "score": 85,
+        "evidence": [
+          "zona cu istoric de inundatii",
+          "proximitate fata de zona vulnerabila"
+        ],
+        "contract_impact": {
+          "clause_tags": ["flood_specific", "inspection_recommended"],
+          "premium_adjustment_percent": 12,
+          "deductible_adjustment_ron": 500
+        }
+      },
+      {
+        "code": "EARTHQUAKE_EXPOSURE",
+        "label": "Expunere la cutremur",
+        "level": "medium",
+        "score": 63,
+        "evidence": [
+          "an constructie 1986",
+          "oras cu expunere seismica relevanta"
+        ],
+        "contract_impact": {
+          "clause_tags": ["earthquake_standard_plus"],
+          "premium_adjustment_percent": 5,
+          "deductible_adjustment_ron": 250
+        }
+      },
+      {
+        "code": "CLAIMS_HISTORY",
+        "label": "Istoric daune",
+        "level": "medium",
+        "score": 58,
+        "evidence": [
+          "2 daune raportate in ultimii 5 ani"
+        ],
+        "contract_impact": {
+          "clause_tags": ["claims_history_review"],
+          "premium_adjustment_percent": 7,
+          "deductible_adjustment_ron": 300
+        }
+      }
+    ]
+  },
+  "pricing": {
+    "base_premium_ron": 1200,
+    "adjustments": [
+      {
+        "source": "FLOOD_EXPOSURE",
+        "type": "percentage",
+        "value": 12
+      },
+      {
+        "source": "EARTHQUAKE_EXPOSURE",
+        "type": "percentage",
+        "value": 5
+      },
+      {
+        "source": "CLAIMS_HISTORY",
+        "type": "percentage",
+        "value": 7
+      }
+    ],
+    "final_premium_ron": 1490,
+    "payment_plan": {
+      "type": "annual",
+      "installments": 1
+    }
+  },
+  "template_binding": {
+    "template_id": "insurance_contract_ro_v4",
+    "fixed_sections": [
+      "definitions",
+      "general_terms",
+      "data_processing",
+      "governing_law",
+      "claims_process"
+    ],
+    "dynamic_sections": [
+      "risk_based_special_clauses",
+      "deductible_terms",
+      "inspection_requirements",
+      "premium_justification_summary"
+    ]
+  },
+  "llm_instructions": {
+    "enabled": true,
+    "role": "legal_contract_clause_assistant",
+    "objective": "Genereaza doar sectiunile dinamice ale contractului pe baza profilului de risc, fara a modifica sectiunile fixe.",
+    "allowed_actions": [
+      "generate_risk_based_clauses",
+      "adapt_tone_to_formal_legal_romanian",
+      "summarize_premium_justification",
+      "insert_missing_safe_defaults"
+    ],
+    "forbidden_actions": [
+      "change_party_identity_data",
+      "change_governing_law",
+      "change_fixed_sections",
+      "invent_new_coverage_types",
+      "override_numeric_pricing_without_explicit_input"
+    ],
+    "generation_rules": {
+      "tone": "formal_legal",
+      "output_language": "ro-RO",
+      "must_reference_risk_factors": true,
+      "must_explain_adjustments": true,
+      "must_avoid_ambiguity": true,
+      "must_preserve_template_structure": true,
+      "max_clause_length_words": 180
+    },
+    "fallback_defaults": {
+      "inspection_required_above_risk_score": 80,
+      "standard_notice_days": 15,
+      "default_deductible_ron": 300
+    }
+  },
+  "clause_library": [
+    {
+      "tag": "flood_specific",
+      "title": "Clauza speciala privind riscul de inundatie",
+      "guidance": "Intareste obligatia asiguratului de notificare rapida, descrie limitarile si masurile rezonabile de prevenire."
+    },
+    {
+      "tag": "inspection_recommended",
+      "title": "Clauza privind inspectia bunului",
+      "guidance": "Daca scorul de risc este ridicat, recomanda sau impune inspectie prealabila ori suplimentara."
+    },
+    {
+      "tag": "earthquake_standard_plus",
+      "title": "Clauza extinsa pentru risc seismic",
+      "guidance": "Include formulare suplimentara privind obligatia de declarare corecta a caracteristicilor constructive."
+    },
+    {
+      "tag": "claims_history_review",
+      "title": "Clauza privind istoricul de daune",
+      "guidance": "Introduce monitorizare suplimentara sau conditii de reevaluare la reinnoire."
+    }
+  ],
+  "expected_llm_output_schema": {
+    "dynamic_clauses": [
+      {
+        "section_code": "string",
+        "section_title": "string",
+        "clause_text": "string",
+        "based_on_risk_factors": ["string"]
+      }
+    ],
+    "premium_justification_summary": "string",
+    "underwriting_notes": [
+      "string"
+    ]
+  }
+}
